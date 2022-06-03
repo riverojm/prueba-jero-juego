@@ -29,8 +29,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
-        public GameObject torch;
-        private bool isFlashActive = true;
+        GameObject clon;
+        public GameObject Instantiateprefab;
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -85,19 +85,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
 
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.C))
             {
-                if (isFlashActive)
-                {
-                    torch.SetActive(false);
-                    isFlashActive = false;
-                }
-                else
-                {
-                    torch.SetActive(true);
-                    isFlashActive = true;
-                }
+                clon = Instantiate(Instantiateprefab, transform.position + transform.forward - transform.up*2, new Quaternion(0, 0, 0, 0));
+                Destroy(clon, 2);
             }
+
         }
 
 
