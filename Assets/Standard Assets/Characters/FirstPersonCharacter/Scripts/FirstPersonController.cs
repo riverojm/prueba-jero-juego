@@ -30,6 +30,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
         GameObject clon;
+        private int cubitos = 10;
         public GameObject Instantiateprefab;
         private Camera m_Camera;
         private bool m_Jump;
@@ -85,12 +86,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
 
-            if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.C) && cubitos <= 0)
             {
                 clon = Instantiate(Instantiateprefab, transform.position + transform.forward - transform.up*2, new Quaternion(0, 0, 0, 0));
                 Destroy(clon, 2);
-            }
-
+                cubitos--;
+            }           
         }
 
 
