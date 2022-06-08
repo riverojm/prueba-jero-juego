@@ -6,7 +6,7 @@ using System;
 public class Timer : MonoBehaviour
 {
 
-    int SegundosTotales = 10;
+    public int SegundosTotales = 10;
     private int SegundosTranscurridos;
     private float Contador = 0;
     public GameObject perdiste;
