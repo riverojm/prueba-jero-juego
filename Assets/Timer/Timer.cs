@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
 
-    public int SegundosTotales = 10;
+    public int SegundosTotales = 30;
     private int SegundosTranscurridos;
     private float Contador = 0;
-    public GameObject perdiste;
 
     public Text contadorSeg;
     // Start is called before the first frame update
     void Start()
     {
-        perdiste.SetActive(false);
         Contador = Time.time;
     }
 
@@ -33,7 +32,7 @@ public class Timer : MonoBehaviour
 
         if (SegundosTotales == 0)
         {
-            perdiste.SetActive(true);
+            SceneManager.LoadScene("perder");
         }
 
     }
