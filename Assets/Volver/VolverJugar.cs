@@ -14,11 +14,13 @@ public class VolverJugar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void VolverAJugar()
-    {
-        SceneManager.LoadScene("SampleScene");
+        if (Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
