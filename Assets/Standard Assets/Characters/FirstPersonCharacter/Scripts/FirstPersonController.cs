@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 #pragma warning disable 618, 649
@@ -93,11 +94,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
                 cubitos--;
             }
+
+            if (transform.position.y <= 1.7)
+            {
+                SceneManager.LoadScene("perder");
+            }
         }
 
         public void ponerBloque()
         {
-            clon = Instantiate(Instantiateprefab, transform.position + transform.forward - transform.up * 2, new Quaternion(0, 0, 0, 0));
+            clon = Instantiate(Instantiateprefab, transform.position + transform.forward - transform.up * 3, new Quaternion(0, 0, 0, 0));
             Destroy(clon, 2);
         }
 
