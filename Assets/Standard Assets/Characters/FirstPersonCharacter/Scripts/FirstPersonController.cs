@@ -89,7 +89,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.C))
             {
-                if (cubitos > 0) {
+                if (cubitos > 0)
+                {
                     ponerBloque();
                 }
                 cubitos--;

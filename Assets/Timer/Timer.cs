@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
 
-    public int SegundosTotales = 30;
+    public int SegundosTotales = 40;
     private int SegundosTranscurridos;
     private float Contador = 0;
 
@@ -20,7 +20,8 @@ public class Timer : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+
         if (Time.time > Contador + 1)
         {
             Contador++;
