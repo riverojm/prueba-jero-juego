@@ -6,7 +6,7 @@ using System;
 using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
-
+    public GameObject Prefabpelota;
     public int SegundosTotales = 40;
     private int SegundosTranscurridos;
     private float Contador = 0;
@@ -16,6 +16,12 @@ public class Timer : MonoBehaviour
     void Start()
     {
         Contador = Time.time;
+        GameObject clon;
+        for (int i = 0; i <= 10; i++)
+        {
+            clon = Instantiate(Prefabpelota);
+            Destroy(clon, 2);
+        }
     }
 
     // Update is called once per frame
