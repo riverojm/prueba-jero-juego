@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class VolverJugar : MonoBehaviour
+public class VolverBotones : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,13 +14,16 @@ public class VolverJugar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R))
-        {
-            SceneManager.LoadScene("Juego");
-        }
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
+        
+    }
+
+    public void VolverJugar()
+    {
+        SceneManager.LoadScene("Juego");
+    }
+
+    public void Salir()
+    {
+        Application.Quit();
     }
 }
